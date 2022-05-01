@@ -1,0 +1,59 @@
+public class Stack {
+
+    //Define the data members 
+    private Node head;
+    private int size;
+    
+
+
+    public Stack() {
+        head=null;
+        size=0;
+        //Implement the Constructor
+    }
+
+
+
+    /*----------------- Public Functions of Stack -----------------*/
+
+
+    public int getSize() { 
+        return size;
+        
+        
+        //Implement the getSize() function
+    }
+
+    public boolean isEmpty() {
+        //Implement the isEmpty() function
+        return head==null;
+    }
+
+    public void push(int element) {
+        Node newNode = new Node(element);
+        newNode.next=head;
+        head=newNode;
+        size++;
+        // head=element;
+        //Implement the push(element) function
+    }
+
+    public int pop() {
+        if(size==0){
+            return -1;
+        }
+        int temp=head.data;
+        head=head.next;
+        size--;
+        return temp;
+        //Implement the pop() function
+    }
+
+    public int top() {
+        if(size==0){
+            return -1;
+        }
+        return head.data;
+        //Implement the top() function
+    }
+}
